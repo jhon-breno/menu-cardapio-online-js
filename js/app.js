@@ -447,7 +447,7 @@ cardapio.metodos = {
   // Atualiza o link do botão do WhatsApp
   finalizarPedido: () => {
     if (MEU_CARRINHO.length > 0 && MEU_ENDERECO != null) {
-      let texto =`Olá! me chamo ${MEU_ENDERECO.nome}, telefone: ${MEU_ENDERECO.fone}, gostaria de fazer um pedido:`;
+      let texto =`Olá! me chamo *${MEU_ENDERECO.nome}*, *telefone: ${MEU_ENDERECO.fone}*, gostaria de fazer um pedido:`;
       texto += `\n*Itens do pedido:*\n\n\${itens}`;
       texto += "\n*Endereço de entrega:*";
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero} ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.bairro}`;
