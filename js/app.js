@@ -169,7 +169,7 @@ cardapio.metodos = {
     }
 
     if (etapa == 2) {
-      $("#lblTituloEtapa").text("Endereço de entrega:");
+      $("#lblTituloEtapa").text("Endereço de entrega e Contato:");
       $("#itensCarrinho").addClass("hidden");
       $("#localEntrega").removeClass("hidden");
       $("#resumoCarrinho").addClass("hidden");
@@ -356,6 +356,8 @@ cardapio.metodos = {
 
   // validação antes de prosseguir para a etapa 3
   resumoPedido: () => {
+    let nome = $("#txtNome").val();
+    let fone = $("#txtFone").val().trim();
     let cep = $("#txtCEP").val().trim();
     let endereco = $("#txtEndereco").val().trim();
     let bairro = $("#txtBairro").val().trim();
@@ -363,6 +365,7 @@ cardapio.metodos = {
     let uf = $("#ddlUf").val().trim();
     let numero = $("#txtNumero").val().trim();
     let complemento = $("#txtComplemento").val().trim();
+    let referencia = $("#txtReferencia").val().trim();
 
     if (cep.length <= 0) {
       cardapio.metodos.mensagem("Informe o CEP, por favor.");
@@ -401,6 +404,8 @@ cardapio.metodos = {
     }
 
     MEU_ENDERECO = {
+      nome: nome,
+      fone: fone,
       cep: cep,
       endereco: endereco,
       bairro: bairro,
@@ -441,7 +446,7 @@ cardapio.metodos = {
   // Atualiza o link do botão do WhatsApp
   finalizarPedido: () => {
     if (MEU_CARRINHO.length > 0 && MEU_ENDERECO != null) {
-      var texto = "Olá! gostaria de fazer um pedido:";
+      let texto =`Olá! me chamo ${MEU_ENDERECO.nome}, telefone: ${MEU_ENDERECO.fone}, gostaria de fazer um pedido:`;
       texto += `\n*Itens do pedido:*\n\n\${itens}`;
       texto += "\n*Endereço de entrega:*";
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
@@ -450,7 +455,7 @@ cardapio.metodos = {
         .toFixed(2)
         .replace(".", ",")}*`;
 
-      var itens = "";
+      let itens = "";
 
       $.each(MEU_CARRINHO, (i, e) => {
         itens += `*${e.qntd}x* ${e.name} ....... R$ ${e.price
@@ -578,6 +583,14 @@ cardapio.templates = {
       </div>
   `,
 };
+
+// função de mascara para input telefone
+document.getElementById('txtFone').addEventListener('input', function (e) {
+  let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+  value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Adiciona parênteses
+  value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen
+  e.target.value = value;
+});
 
 // Seleciona o botão
 const backToTopButton = document.getElementById("backToTop");
