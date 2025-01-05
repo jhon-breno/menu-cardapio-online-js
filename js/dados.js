@@ -9,7 +9,7 @@ var MENU = {
         },
         {
             "id": "005-kings-carolina-oink-sampler",
-            "img": "./img/cardapio/churrasco/carolina-bbq-oink-sampler.1340b5a10cedc238cb2280306dd1d5a5.jpg",
+            "img": "./img/cardapio/churrasco/picanha.png",
             "name": "Bovino - Picanha",
             "dsc": "Carne de boi selecionada",
             "price": 9
