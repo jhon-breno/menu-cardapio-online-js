@@ -2,7 +2,7 @@ var MENU = {
     "churrasco": [
         {
             "id": "ribs-brisket-and-burnt-ends",
-            "img": "./img/cardapio/churrasco/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg",
+            "img": "./img/cardapio/churrasco/maminha.jpg",
             "name": "Bovino - Maminha",
             "dsc": "Carne de boi selecionada",
             "price": 7
@@ -16,8 +16,8 @@ var MENU = {
         },
         {
             "id": "texas-monthlys-1-bbq-brisket",
-            "img": "./img/cardapio/churrasco/texas-monthlys-1-bbq-brisket.1006a061be7acae03992e420fbca995a.jpg",
-            "name": "Carne de boi - Fraudinha",
+            "img": "./img/cardapio/churrasco/fraldinha.png",
+            "name": "Carne de boi - Fraldinha",
             "dsc": "Carne de boi selecionada",
             "price": 7
         },
