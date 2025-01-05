@@ -413,6 +413,7 @@ cardapio.metodos = {
       uf: uf,
       numero: numero,
       complemento: complemento,
+      referencia: referencia,
     };
 
     cardapio.metodos.carregarEtapa(3);
@@ -437,7 +438,7 @@ cardapio.metodos = {
       `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`
     );
     $("#cidadeEndereco").html(
-      `${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`
+      `${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.referencia}`
     );
 
     cardapio.metodos.finalizarPedido();
@@ -451,6 +452,7 @@ cardapio.metodos = {
       texto += "\n*Endereço de entrega:*";
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`;
       texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`;
+      texto += `\n${MEU_ENDERECO.referencia}`;
       texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA)
         .toFixed(2)
         .replace(".", ",")}*`;
