@@ -435,10 +435,10 @@ cardapio.metodos = {
     });
 
     $("#resumoEndereco").html(
-      `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`
+      `${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero} ${MEU_ENDERECO.complemento}, ${MEU_ENDERECO.bairro}`
     );
     $("#cidadeEndereco").html(
-      `${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.referencia}`
+      `${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} - ${MEU_ENDERECO.referencia}`
     );
 
     cardapio.metodos.finalizarPedido();
@@ -450,7 +450,7 @@ cardapio.metodos = {
       let texto =`Olá! me chamo ${MEU_ENDERECO.nome}, telefone: ${MEU_ENDERECO.fone}, gostaria de fazer um pedido:`;
       texto += `\n*Itens do pedido:*\n\n\${itens}`;
       texto += "\n*Endereço de entrega:*";
-      texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.bairro}`;
+      texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero} ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.bairro}`;
       texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep}`;
       texto += `\n${MEU_ENDERECO.referencia}`;
       texto += `\n\n*Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA)
