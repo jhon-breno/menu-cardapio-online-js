@@ -17,7 +17,7 @@ var MENU = {
         {
             "id": "texas-monthlys-1-bbq-brisket",
             "img": "./img/cardapio/churrasco/fraldinha.png",
-            "name": "Bovinho - Fraldinha",
+            "name": "Bovino - Fraldinha",
             "dsc": "Carne de boi selecionada",
             "price": 7
         },
