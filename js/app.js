@@ -10,7 +10,7 @@ var MEU_ENDERECO = null;
 var VALOR_CARRINHO = 0;
 var VALOR_ENTREGA = 5;
 
-var CELULAR_EMPRESA = "5585999469423";
+var CELULAR_EMPRESA = "558591585921";
 
 cardapio.eventos = {
   init: () => {
@@ -447,7 +447,7 @@ cardapio.metodos = {
   // Atualiza o link do botão do WhatsApp
   finalizarPedido: () => {
     if (MEU_CARRINHO.length > 0 && MEU_ENDERECO != null) {
-      let texto =`Olá! me chamo *${MEU_ENDERECO.nome}*, *telefone: ${MEU_ENDERECO.fone}*, gostaria de fazer um pedido:`;
+      let texto = `Olá! me chamo *${MEU_ENDERECO.nome}*, *telefone: ${MEU_ENDERECO.fone}*, gostaria de fazer um pedido:`;
       texto += `\n*Itens do pedido:*\n\n\${itens}`;
       texto += "\n*Endereço de entrega:*";
       texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero} ${MEU_ENDERECO.complemento} - ${MEU_ENDERECO.bairro}`;
@@ -587,10 +587,10 @@ cardapio.templates = {
 };
 
 // função de mascara para input telefone
-document.getElementById('txtFone').addEventListener('input', function (e) {
-  let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
-  value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Adiciona parênteses
-  value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen
+document.getElementById("txtFone").addEventListener("input", function (e) {
+  let value = e.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+  value = value.replace(/^(\d{2})(\d)/g, "($1) $2"); // Adiciona parênteses
+  value = value.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen
   e.target.value = value;
 });
 
