@@ -1,4 +1,27 @@
 var MENU = {
+  promocoes: [
+    {
+      id: "pizza-calabresa",
+      img: "./img/cardapio/pizzas/calabresa.jpg",
+      name: "Pizza Calabresa",
+      dsc: "Promoção pizza de calabresa dos Sonhos",
+      price: 15,
+    },
+    {
+      id: "pizza-mussarela",
+      img: "./img/cardapio/pizzas/mussarela.jpg",
+      name: "Pizza Mussarela",
+      dsc: "Promoção pizza de mussarela dos Sonhos",
+      price: 15,
+    },
+    {
+      id: "coca-1l",
+      img: "./img/cardapio/bebidas/coca1l.jpg",
+      name: "Coca-Cola 1L",
+      dsc: "Promoção Coca-Cola 1L",
+      price: 8,
+    },
+  ],
   pasteis: [
     {
       id: "ribs-brisket-and-burnt-ends",
