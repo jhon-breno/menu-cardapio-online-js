@@ -14,8 +14,6 @@ var CELULAR_EMPRESA = "558591585921";
 
 cardapio.eventos = {
   init: () => {
-    cardapio.metodos.obterDiasPromocoes();
-    cardapio.metodos.obterCategoriaPromocoes();
     cardapio.metodos.obterItensCardapio();
     cardapio.metodos.carregarBotaoLigar();
     cardapio.metodos.carregarBotaoReserva();
@@ -24,32 +22,7 @@ cardapio.eventos = {
 
 cardapio.metodos = {
   // obtem a lista de itens do cardápio
- 
-  //metodo para obter dias de promoções (segunda, quarta e quinta-feira)
-  obterDiasPromocoes: () => {
-    var diasPromocoes = [1, 3, 4]; // Segunda, Quarta e Quinta-feira
-    var hoje = new Date().getDay(); // Obtém o dia atual (0-6, onde 0 é Domingo e 6 é Sábado)
-    return diasPromocoes.includes(hoje); // Retorna true se hoje for um dia de promoção
-  },
-
-// saber se hoje é dia de promoção
-  obterCategoriaPromocoes: () => {
-    var diasPromocoes = [1, 3, 4]; // Segunda, Quarta e Quinta-feira
-    var hoje = new Date().getDay(); // Obtém o dia atual (0-6, onde 0 é Domingo e 6 é Sábado)
-    if (diasPromocoes.includes(hoje)) {
-      // Se hoje for um dia de promoção, exibe a categoria de promoções
-      $("#menu-promocoes").removeClass("hidden");
-      $("#menu-promocoes").addClass("active");
-    } else {
-      // Se não for um dia de promoção, oculta a categoria de promoções
-      $("#menu-promocoes").addClass("hidden");
-      $("#menu-pizzas").addClass("active");
-    }
-  },
-
-
-
-  obterItensCardapio: (categoria = 'pizzas', vermais = false) => {
+  obterItensCardapio: (categoria = "burgers", vermais = false) => {
     var filtro = MENU[categoria];
     console.log(filtro);
 
@@ -638,16 +611,3 @@ window.addEventListener("scroll", () => {
 backToTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
-
-// Nos dias de segunda-feira, quarta-feira e quinta-feira, mostrar a categoria de "Promoções" com classe active e remover o active das pizzas que está default e se não for esses dias, aplicar display none na categoria de promoções
-if (new Date().getDay() === 1 || new Date().getDay() === 3 || new Date().getDay() === 4) {
-  document.getElementById("menu-promocoes").classList.add("active");
-  document.getElementById("menu-pizzas").classList.remove("active");
-}
-else {
-  document.getElementById("menu-promocoes").style.display = "none";
-  document.getElementById("menu-pizzas").classList.add("active");
-}
-
-
-
